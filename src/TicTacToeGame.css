@@ -1,0 +1,90 @@
+.main-container {
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 32px;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.board-container{ 
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    width: 450px;
+    max-width: 450px;
+    max-height: 450px;
+    position: relative;
+
+    
+}
+
+.strike-through {
+    position: absolute;   
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    background: none;
+    border-width: 1.5px;
+    border-style: none;
+    border-color: #000000;
+    outline: none;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: 500;
+
+    &.top { 
+        border-top-style: solid;
+    }
+    &.right { 
+        border-right-style: solid;
+    }
+    &.bottom { 
+        border-bottom-style: solid;
+    }
+    &.left { 
+        border-left-style: solid;
+    }
+
+}
+
+.animated-line {
+    stroke-linecap: round;
+    animation: drawLine 0.5s ease-out forwards;
+  }
+  
+  @keyframes drawLine {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+
+@media screen and (max-width: 600px) {
+    .heading {
+        font-weight: 500;
+    }
+    .board-container {
+        transform: scale(0.65)
+    }
+    .col {
+        font-weight: 600;
+    }
+}
